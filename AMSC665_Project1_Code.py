@@ -130,7 +130,7 @@ def eval6(N, x):
 def make_figures():
     # Problem 5 solutions.
     xx = np.linspace(-1, 1, 2001)
-    Ns5 = [8, 12, 16, 20, 22]
+    Ns5 = [4, 6, 8, 12, 16, 20, 22]
     plt.figure(figsize=(7.2, 4.8))
     plt.plot(xx, exact5(xx), linewidth=2.4, label='exact')
     for N in Ns5:
@@ -187,7 +187,7 @@ def make_figures():
     plt.close()
 
     # Convergence summary.
-    N5all = np.arange(8, 27, 2)
+    N5all = np.concatenate(([4, 5, 6, 7], np.arange(8, 27, 2)))
     e5=[]
     for N in N5all:
         e5.append(np.max(np.abs(eval5(int(N), xx) - exact5(xx))))
